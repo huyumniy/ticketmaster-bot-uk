@@ -1,0 +1,362 @@
+body {
+  background: #005eb4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #031f38,
+    #005eb4
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #031f38,
+    #005eb4
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  margin: 0;
+  padding: 0;
+
+  color: aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.main {
+  margin: 0px 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.proxy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  display: flex;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  color: aliceblue;
+  outline: none;
+  width: 250px;
+  font-size: 16px;
+  color: #0f2027;
+}
+.items {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+}
+.items input {
+  height: 16px;
+  width: 16px;
+}
+
+.checkbox-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.checkbox-input input {
+  height: fit-content;
+  width: fit-content;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+#run {
+  height: 50px;
+  width: 190px;
+  font-size: 24px;
+  border-radius: 15px;
+  border: solid;
+  bottom: 0;
+}
+
+#reloadTimeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#reloadTimeInputContainer {
+  display: flex;
+  gap: 25px;
+}
+
+#reloadTimeInputContainer > input {
+  max-width: 50px;
+}
+
+#restart {
+  height: 50px;
+  width: 190px;
+  font-size: 24px;
+  border-radius: 15px;
+  border: solid;
+  bottom: 0;
+}
+
+.active {
+  color: chartreuse;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  cursor: pointer;
+  border: solid;
+}
+
+.active-restart {
+  color: gold;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  cursor: pointer;
+  border: solid;
+}
+
+.disabled {
+  cursor: default;
+  border: none;
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#seats form {
+  display: grid;
+  grid-template-columns: repeat(8, 0.1fr);
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+#seats input {
+  width: 25px;
+}
+
+.absolute-checkbox {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.absolute-checkbox input {
+  height: 15px;
+  width: 15px;
+}
+
+.checkbox {
+  display: flex;
+  padding: 10px 0px;
+}
+
+.checkbox input {
+  height: 15px;
+  width: 15px;
+}
+
+.inputs {
+  padding: 10px 0px;
+}
+.start {
+  display: flex;
+  justify-content: center;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+}
+.show-password-button {
+  position: relative;
+  right: px;
+  cursor: pointer;
+}
+.inputs i {
+  cursor: pointer;
+}
+.show-hide {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#password {
+  width: 250px;
+}
+
+.show-hide i {
+  position: absolute;
+  padding: 10px;
+}
+.hidden {
+  display: none;
+}
+.choose {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+#info_popup {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: 10px;
+  width: 100vw;
+  height: 100vh;
+  font-size: 48px;
+}
+.do_continue {
+  border: none;
+  border-radius: 15px;
+  color: #0f2027;
+  width: 200px;
+  height: 100px;
+  font-size: 48px;
+}
+.yes {
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #78ffd6,
+    #a8ff78
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #78ffd6,
+    #a8ff78
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.no {
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.connectionType {
+  display: flex;
+}
+
+.connectionType input {
+  width: 25px;
+}
+
+.connectionChoice {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+}
+
+#adspowerInput {
+  display: flex;
+}
+
+.textareaNormal {
+  display: flex;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  color: aliceblue;
+  outline: none;
+  width: 400px;
+  height: 250px;
+  font-size: 16px;
+  color: #0f2027;
+}
+
+.radio form {
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  gap: 6px;
+}
+
+.radio form h3 {
+  margin-right: 12px;
+}
+
+.radio form input {
+  height: 15px;
+  width: 15px;
+}
+
+.isMadridista {
+  display: flex;
+  margin: 10px 0;
+}
+
+.isMadridista input {
+  display: flex;
+  width: 15px;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-size: 16px;
+  color: #0f2027;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
