@@ -1,3 +1,4 @@
+import time
 
 async def custom_wait(page, selector, timeout=10):
     for _ in range(0, timeout):
@@ -12,7 +13,6 @@ async def custom_wait(page, selector, timeout=10):
 
 
 async def custom_wait_elements(page, selector, timeout=10):
-    print('in custom wait')
     for _ in range(0, timeout):
         try:
             element = await page.query_selector_all(selector)

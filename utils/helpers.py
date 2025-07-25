@@ -1,4 +1,14 @@
 import nodriver as uc
+from nodriver import cdp
+import asyncio
+import logging
+import json
+from colorama import init, Fore
+from asyncio import iscoroutine, iscoroutinefunction
+import itertools
+
+init(autoreset=True)
+logger = logging.getLogger("uc.connection")
 
 async def listener_loop(self):
     while True:

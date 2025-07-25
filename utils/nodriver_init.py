@@ -1,4 +1,3 @@
-import json
 from pprint import pprint
 import requests
 import nodriver as uc
@@ -116,7 +115,6 @@ async def configure_proxy(tab, proxyList):
 
 
 async def create_driver(open_url=None, proxy_list=None):
-    print('open url and proxy list!!!!!,', open_url, proxy_list)
     """
     Create and return an undetected-chromedriver driver (with extensions and optional remote Selenium host).
     """
@@ -142,18 +140,19 @@ async def create_driver(open_url=None, proxy_list=None):
             headless=False,
             browser_executable_path=None,
             browser_args=None,
+            sandbox=True,
             lang='en-US',
             host=host,
             port=int(port)
         )
         print(f"[DEBUG] Using remote Selenium at {host}:{port}")
     else:
-        print('using default config')
         config = uc.Config(
             user_data_dir=None,
             headless=False,
             browser_executable_path=None,
             browser_args=None,
+            sandbox=True,
             lang='en-US'
         )
 
@@ -166,6 +165,7 @@ async def create_driver(open_url=None, proxy_list=None):
 
     driver = await uc.Browser.create(config=config)
     print("[DEBUG] Driver created successfully")
+
     # If using proxies, configure them on the main tab
     if proxy_list:
         tab = driver.main_tab
