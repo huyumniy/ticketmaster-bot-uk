@@ -24,7 +24,7 @@ call "%venv_dir%\Scripts\activate"
 rem ----------------------------------------
 rem 3) Install requirements from the project root
 rem ----------------------------------------
-pip install -r "%project_dir%\requirements.txt"
+python -m pip install -r "%project_dir%\requirements.txt"
 
 rem ----------------------------------------
 rem 4) Deactivate virtual environment
