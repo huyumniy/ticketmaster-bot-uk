@@ -222,20 +222,24 @@ async def parse_ticket(ticket):
 
 async def finalize_booking(page, browser_info, event_data, ticket_info):
     current_page = await get_location(page)
-    if 'auth.ticketmaster.com' not in current_page or 'checkout' not in current_page:
+    if 'auth.ticketmaster.com' in current_page or 'checkout' in current_page:
+        
+        print(f"[INFO] {browser_info}. Booking succeeded—playing notification sound")
+        sound, fs = sf.read('notify.wav', dtype='float32')
+        sd.play(sound, fs)
+        sd.wait()
+        try:
+            post_data = {"data": f"{browser_info}\nevent: {event_data.get('name')}\ncity: {event_data.get('city')}\ndate: {event_data.get('date')}\nПіймано квитків: {event_data.get('quantity')}\nКатегорія: {ticket_info.get('category')}\nЦіна: {ticket_info.get('price')}\Місце: {ticket_info.get('place')}"}
+            print(post_data)
+            post_request(post_data)
+        except Exception as e: print("Can't send message to slack, may be slack server is turned off, error:", e)
+        
+        input("Press Enter to continue after booking…")
+        
+        return True
+    else:
         print('Book is not successfull')
         return False
-    print(f"[INFO] {browser_info}. Booking succeeded—playing notification sound")
-
-    post_data = {"data": f"{browser_info}\nevent: {event_data.get('name')}\ncity: {event_data.get('city')}\ndate: {event_data.get('date')}\nПіймано квитків: {event_data.get('quantity')}\nКатегорія: {ticket_info.get('category')}\nЦіна: {ticket_info.get('price')}\Місце: {ticket_info.get('place')}"}
-    print(post_data)
-    post_request(post_data)
-    sound, fs = sf.read('notify.wav', dtype='float32')
-    sd.play(sound, fs)
-    sd.wait()
-
-    input("Press Enter to continue after booking…")
-    return True
 
     
 
