@@ -221,7 +221,8 @@ async def parse_ticket(ticket):
 
 
 async def finalize_booking(page, browser_info, event_data, ticket_info):
-    if 'auth.ticketmaster.com' not in await get_location(page):
+    current_page = await get_location(page)
+    if 'auth.ticketmaster.com' not in current_page or 'checkout' not in current_page:
         print('Book is not successfull')
         return False
     print(f"[INFO] {browser_info}. Booking succeeded—playing notification sound")
