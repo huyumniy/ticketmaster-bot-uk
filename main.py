@@ -262,12 +262,13 @@ async def main(
     browser_part = f"Browser: {adspower_id if adspower_id else browser_id}"
     user_part    = f"User: {os.getlogin()}."
     user_info = "\n".join([user_part + " " + browser_part])
-
+    await page.get(initial_link)
     while True:
         try:
-            await wait_for_initial_page(page, initial_link, user_info)
-            await reject_cookies(page)
             current_location = await get_location(page)
+            await wait_for_initial_page(page, current_location, user_info)
+            await reject_cookies(page)
+            
 
             event_data = get_event_data_based_on_link(data, current_location)
             if not event_data:
